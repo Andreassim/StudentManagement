@@ -1,7 +1,6 @@
 # StudentManagement
 Onsdagsopgave uge 15
 
-
 - src: contains all source code of project.
 - test: contains all test code of project.
 - com: contains all company applications.
