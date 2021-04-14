@@ -1,10 +1,9 @@
 [![Contributors][contributors-shield]][contributors-url]
 [![MIT License][license-shield]][license-url]
 
-# Student Management
-### Onsdagsopgave uge 15
+# Onsdagsopgave uge 15
 
-## Java Console App Template
+## Student Management
 This project implements the `MVC` architecture. The structure of project is as follows:
 
 * `src`: contains all source code of project.
