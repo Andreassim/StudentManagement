@@ -1,5 +1,9 @@
 ---
 name: Feature Request
+about: Feature request
+title: ''
+labels: ''
+assignees: ''
 
 ---
 
@@ -8,5 +12,3 @@ name: Feature Request
 
 
 #### Describe the solution you'd like
-
-

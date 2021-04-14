@@ -1,5 +1,9 @@
 ---
 name: Bug Report
+about: Bug Report
+title: ''
+labels: ''
+assignees: ''
 
 ---
 
@@ -12,5 +16,3 @@ name: Bug Report
 
 
 #### Steps to Reproduce
-
-
