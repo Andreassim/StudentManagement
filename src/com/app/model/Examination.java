@@ -21,11 +21,11 @@ public class Examination {
     setWeightOfTest(examWeight);
   }
 
-  public void setName(String name) {
+  private void setName(String name) {
     this.name = name;
   }
 
-  public Exam[] initializeTests(int testAmount) {
+  private Exam[] initializeTests(int testAmount) {
     Exam[] exams = new Exam[testAmount];
     for (int i = 0; i < testAmount; i++) {
       exams[i] = new Exam();
@@ -34,7 +34,7 @@ public class Examination {
     return exams;
   }
 
-  public void setWeightOfTest(double[] weight) {
+  private void setWeightOfTest(double[] weight) {
     if (!(weight.length == exams.length)) {
       throw new IllegalArgumentException("Length of the array is different from amount of tests");
     }
