@@ -1,10 +1,10 @@
 package com.app.model;
 
-public class Test {
+public class Grade {
   private int grade;
 
-  public Test(){
-    setGrade(-3);
+  Grade(int grade) {
+    setGrade(grade);
   }
 
   public void setGrade(int grade) {
@@ -14,4 +14,5 @@ public class Test {
   public int getGrade() {
     return grade;
   }
+
 }

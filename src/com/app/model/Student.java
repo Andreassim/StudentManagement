@@ -6,9 +6,5 @@ public class Student {
   String name;
   ArrayList<Examination> exams;
 
-  public Student(){
-
-  }
-
-
+  public Student() {}
 }

@@ -1,4 +1,3 @@
 package com.app;
 
-public class App {
-}
+public class App {}
