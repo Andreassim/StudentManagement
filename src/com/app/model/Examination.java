@@ -51,7 +51,7 @@ public class Examination {
     }
   }
 
-  public int getGrade(){
+  public int getGrade() throws NullPointerException{
     if(exams.length == 1){
       return exams[0].getGrade();
     }
