@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Examination {
   private final Exam[] exams;
-  private final Map<Exam, Double> testWeight = new HashMap<Exam, Double>();
+  private final Map<Exam, Double> examWeight = new HashMap<Exam, Double>();
   private String name;
 
   public Examination(String name) {
@@ -29,7 +29,7 @@ public class Examination {
     Exam[] exams = new Exam[testAmount];
     for (int i = 0; i < testAmount; i++) {
       exams[i] = new Exam();
-      testWeight.put(exams[i], 1.0 / testAmount);
+      examWeight.put(exams[i], 1.0 / testAmount);
     }
     return exams;
   }
@@ -47,8 +47,22 @@ public class Examination {
       throw new IllegalArgumentException("Sum weight must be 1.0");
     }
     for (int i = 0; i < weight.length; i++) {
-      testWeight.replace(exams[i], weight[i]);
+      examWeight.replace(exams[i], weight[i]);
     }
+  }
+
+  public int getGrade(){
+    if(exams.length == 1){
+      return exams[0].getGrade();
+    }
+    int result;
+    double weightedGrade = 0.0;
+    for(int i = 0; i < exams.length; i ++){
+      weightedGrade += exams[i].getGrade()*examWeight.get(exams[i]);
+    }
+    result = (int) weightedGrade;
+    return result;
+
   }
 
   // TODO Add getters; final grade -> Andreas
