@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class Student {
   final String FILENAME = "data.txt";
   String name;
+
   ArrayList<Examination> exams;
   private double average;
 
