@@ -5,20 +5,20 @@ import java.util.Map;
 
 public class Examination {
   private final Exam[] exams;
-  private String name;
   private final Map<Exam, Double> testWeight = new HashMap<Exam, Double>();
+  private String name;
 
   public Examination(String name) {
     setName(name);
     exams = initializeTests(1);
   }
 
-  public Examination(String name, double[] testWeight) {
-    setName(name);
-    int testAmount = testWeight.length;
+  public Examination(String examName, double[] examWeight) {
+    setName(examName);
+    int testAmount = examWeight.length;
     exams = initializeTests(testAmount);
     // TODO Refactor - rethink where we validate testWeight
-    setWeightOfTest(testWeight);
+    setWeightOfTest(examWeight);
   }
 
   public void setName(String name) {
@@ -51,7 +51,6 @@ public class Examination {
     }
   }
 
-  // TODO Add getters; final grade
-  // TODO set grade; throw exceptions
-
+  // TODO Add getters; final grade -> Andreas
+  // TODO set grade; throw exceptions -> Andreas
 }

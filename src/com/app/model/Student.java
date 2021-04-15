@@ -7,4 +7,9 @@ public class Student {
   ArrayList<Examination> exams;
 
   public Student() {}
+
+  // TODO get/set grades -> Mathias
+  // TODO get/set name -> Mathias
+  // TODO average -> Mathias
+
 }
