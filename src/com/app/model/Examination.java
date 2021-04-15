@@ -51,6 +51,11 @@ public class Examination {
     }
   }
 
+  public void setGrade(int examIndex ,int grade){
+    exams[examIndex].setGrade(grade);
+  }
+
+
   public int getGrade() throws NullPointerException{
     if(exams.length == 1){
       return exams[0].getGrade();
@@ -83,6 +88,5 @@ public class Examination {
     }
   }
 
-  // TODO Add getters; final grade -> Andreas
   // TODO set grade; throw exceptions -> Andreas
 }
