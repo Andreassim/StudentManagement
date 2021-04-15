@@ -30,7 +30,7 @@ public class Exam {
     int testAmount = examWeight.length;
     exams = initializeTests(testAmount);
     // TODO Refactor - rethink where we validate testWeight
-    setWeightOfTest(examWeight);
+    setWeightOfExamResult(examWeight);
   }
 
   public String getName() {
@@ -50,10 +50,7 @@ public class Exam {
     return exams;
   }
 
-  private void setWeightOfTest(double[] weight) {
-    if (!(weight.length == exams.length)) {
-      throw new IllegalArgumentException("Length of the array is different from amount of tests");
-    }
+  private void setWeightOfExamResult(double[] weight) {
     double weightSum = 0;
     for (double v : weight) {
       weightSum += v;
