@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Examination {
   private final Exam[] exams;
-  private final Map<Exam, Double> examWeight = new HashMap<Exam, Double>();
+  private final Map<Exam, Double> examWeight = new HashMap<>();
   private String name;
 
   public Examination(String name) {
@@ -52,6 +52,10 @@ public class Examination {
   }
 
   public void setGrade(int examIndex ,int grade){
+    if(0 > examIndex || exams.length-1 < examIndex){
+      throw new ArrayIndexOutOfBoundsException("Index is out of bounds");
+    }
+    grade = gradeRoundToValidGrade(grade);
     exams[examIndex].setGrade(grade);
   }
 
