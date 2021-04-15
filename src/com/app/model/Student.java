@@ -10,7 +10,7 @@ public class Student {
   final String FILENAME = "data.txt";
   String name;
 
-  ArrayList<Examination> exams;
+  ArrayList<Examination> exams = new ArrayList<>();
   private double average;
 
   public Student(String name) {
@@ -22,7 +22,7 @@ public class Student {
   }
 
   public void save() {
-    String line = name + exams;
+    String line = name + exams.get(0).getGrade();
     System.out.println(line);
   }
 
