@@ -8,7 +8,7 @@ public class Controller {
     Student student = new Student("Mathias");
     student.addExam("Matematik", new double[] {0.25, 0.75}, new int[] {7, 7});
     student.addExam("Fysik", new double[] {0.25, 0.75}, new int[] {10, 12});
-    student.addExam("Dansk",6); // TODO
+    student.addExam("Dansk",6);
     student.save();
 
     System.out.println();
