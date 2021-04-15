@@ -1,6 +1,5 @@
 package com.app.controllers;
 
-import com.app.model.SchoolSubject;
 import com.app.model.Student;
 import com.app.view.View;
 

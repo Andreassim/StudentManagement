@@ -1,4 +1,4 @@
-package com.app.model;
+package com.app.controllers;
 
 public enum SchoolSubject {
   ART,

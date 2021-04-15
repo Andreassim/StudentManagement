@@ -1,5 +1,7 @@
 package com.app.model;
 
+import com.app.controllers.SchoolSubject;
+
 import java.util.HashMap;
 import java.util.Map;
 

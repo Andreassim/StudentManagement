@@ -1,6 +1,6 @@
 package com.app.view;
 
-import com.app.model.SchoolSubject;
+import com.app.controllers.SchoolSubject;
 
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
