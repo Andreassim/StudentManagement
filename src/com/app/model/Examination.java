@@ -61,8 +61,26 @@ public class Examination {
       weightedGrade += exams[i].getGrade()*examWeight.get(exams[i]);
     }
     result = (int) weightedGrade;
+    result = gradeRoundToValidGrade(result);
     return result;
+  }
 
+  private int gradeRoundToValidGrade(int grade){
+    if(0 > grade){
+      return -3;
+    }else if(2 > grade){
+      return 0;
+    }else if(4 > grade){
+      return 2;
+    }else if(7 > grade){
+      return 4;
+    }else if(10 > grade){
+      return 7;
+    }else if(12 > grade){
+      return 10;
+    }else{
+      return 12;
+    }
   }
 
   // TODO Add getters; final grade -> Andreas
