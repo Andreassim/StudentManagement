@@ -1,6 +1,6 @@
 package com.app.model;
 
-public class Exam {
+public class ExamResult {
   // private int grade;
   private Grade grade;
 

@@ -3,17 +3,17 @@ package com.app.model;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Examination {
-  private final Exam[] exams;
-  private final Map<Exam, Double> examWeight = new HashMap<>();
+public class Exam {
+  private final ExamResult[] exams;
+  private final Map<ExamResult, Double> examWeight = new HashMap<>();
   private String name;
 
-  public Examination(String name) {
+  public Exam(String name) {
     setName(name);
     exams = initializeTests(1);
   }
 
-  public Examination(String examName, double[] examWeight) {
+  public Exam(String examName, double[] examWeight) {
     setName(examName);
     int testAmount = examWeight.length;
     exams = initializeTests(testAmount);
@@ -25,10 +25,10 @@ public class Examination {
     this.name = name;
   }
 
-  private Exam[] initializeTests(int testAmount) {
-    Exam[] exams = new Exam[testAmount];
+  private ExamResult[] initializeTests(int testAmount) {
+    ExamResult[] exams = new ExamResult[testAmount];
     for (int i = 0; i < testAmount; i++) {
-      exams[i] = new Exam();
+      exams[i] = new ExamResult();
       examWeight.put(exams[i], 1.0 / testAmount);
     }
     return exams;

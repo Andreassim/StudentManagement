@@ -10,14 +10,14 @@ public class Student {
   final String FILENAME = "data.txt";
   String name;
 
-  ArrayList<Examination> exams = new ArrayList<>();
+  ArrayList<Exam> exams = new ArrayList<>();
   private double average;
 
   public Student(String name) {
     setName(name);
   }
 
-  public void addExams(Examination exam) {
+  public void addExams(Exam exam) {
     exams.add(exam);
   }
 
