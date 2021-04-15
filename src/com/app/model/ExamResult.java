@@ -1,7 +1,6 @@
 package com.app.model;
 
 public class ExamResult {
-  // private int grade;
   private Grade grade;
 
   public int getGrade() {
@@ -13,7 +12,6 @@ public class ExamResult {
   }
 
   public void setGrade(int grade) {
-    // TODO trow exceptions for illegal values -> Mathias
     this.grade = new Grade(grade);
   }
 }

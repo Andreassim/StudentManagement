@@ -1,20 +1,28 @@
 package com.app.controllers;
 
+import com.app.model.SchoolSubject;
 import com.app.model.Student;
+import com.app.view.View;
 
 public class Controller {
   public void run() {
+    View view = new View();
 
     Student student = new Student("Mathias");
-    student.addExam("Matematik", new double[] {0.25, 0.75}, new int[] {7, 7});
-    student.addExam("Fysik", new double[] {0.25, 0.75}, new int[] {10, 12});
-    student.addExam("Dansk",6);
-    student.save();
+    student.addExam(SchoolSubject.MATH, new double[] {0.25, 0.75}, new int[] {7, 7});
+    student.addExam(SchoolSubject.PHYSICS, new double[] {0.25, 0.75}, new int[] {10, 12});
+    student.addExam(SchoolSubject.GEOGRAPHY, 7);
 
-    System.out.println();
+    view.displayStudent(student.getName(), student.result());
+    view.displayAverage(student.calculateAverage());
+    view.newLine();
 
-    Student student1 = new Student("Andreas");
-    student1.addExam("Dansk", new double[] {0.5, 0.5}, new int[] {12, 12});
-    student1.save();
+    Student student2 = new Student("Andreas");
+    student2.addExam(SchoolSubject.HISTORY, new double[] {0.25, 0.75}, new int[] {10, 10});
+    student2.addExam(SchoolSubject.PHYSICS, new double[] {0.25, 0.75}, new int[] {10, 12});
+    student2.addExam(SchoolSubject.SCIENCE, 12);
+
+    view.displayStudent(student2.getName(), student2.result());
+    view.displayAverage(student2.calculateAverage());
   }
 }
