@@ -1,17 +1,17 @@
 package com.app.model;
 
-public class Grade {
+class Grade {
   private int grade;
 
   Grade(int grade) {
     setGrade(grade);
   }
 
-  public int getGrade() {
+  int getGrade() {
     return grade;
   }
 
-  public void setGrade(int grade) {
+  void setGrade(int grade) {
     this.grade = grade;
   }
 }

@@ -26,7 +26,7 @@ public class Student {
     exam.setGrade(0, grade);
   }
 
-  public SchoolSubject getExamName(int i) {
+  private SchoolSubject getExamName(int i) {
     return exams.get(i).getName();
   }
 
@@ -34,7 +34,7 @@ public class Student {
     return name;
   }
 
-  public void setName(String name) {
+  private void setName(String name) {
     boolean valid = name.matches("(?i)[a-z]([- ',.a-z]{0,23}[a-z])?");
     if (!valid) {
       throw new IllegalArgumentException("Illegal name");
@@ -43,7 +43,7 @@ public class Student {
     this.name = name;
   }
 
-  public int getGrade(int i) {
+  private int getGrade(int i) {
     return exams.get(i).getGrade();
   }
 
