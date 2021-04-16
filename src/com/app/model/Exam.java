@@ -3,17 +3,17 @@ package com.app.model;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Exam {
+class Exam {
   private final ExamResult[] exams;
   private final Map<ExamResult, Double> examWeight = new HashMap<>();
   private SchoolSubject name;
 
-  public Exam(SchoolSubject name) {
+  Exam(SchoolSubject name) {
     setName(name);
     exams = initializeTests(1);
   }
 
-  public Exam(SchoolSubject examName, double[] examWeight) {
+  Exam(SchoolSubject examName, double[] examWeight) {
     setName(examName);
     int testAmount = examWeight.length;
     exams = initializeTests(testAmount);
@@ -21,7 +21,7 @@ public class Exam {
     setWeightOfExamResult(examWeight);
   }
 
-  public SchoolSubject getName() {
+  SchoolSubject getName() {
     return name;
   }
 
@@ -56,7 +56,7 @@ public class Exam {
   }
 
   private boolean isValidGrade(int grade) {
-    int[] grades = new int[] {-3,0,4,7,10,12};
+    int[] grades = new int[] {-3, 0, 4, 7, 10, 12};
     for (int i : grades) {
       if (i == grade) {
         return true;
@@ -66,7 +66,7 @@ public class Exam {
     return false;
   }
 
-  public void setGrade(int examIndex, int grade) {
+  void setGrade(int examIndex, int grade) {
     if (!isValidGrade(grade)) {
       throw new IllegalArgumentException("Illegal grade");
     }
@@ -79,7 +79,7 @@ public class Exam {
     exams[examIndex].setGrade(grade);
   }
 
-  public int getGrade() throws NullPointerException {
+  int getGrade() throws NullPointerException {
     if (1 == exams.length) {
       return exams[0].getGrade();
     }
