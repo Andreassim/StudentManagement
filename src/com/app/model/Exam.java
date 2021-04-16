@@ -17,7 +17,8 @@ class Exam {
     setName(examName);
     int testAmount = examWeight.length;
     exams = initializeTests(testAmount);
-    setWeightOfTest(examWeight);
+    // TODO Refactor - rethink where we validate testWeight
+    setWeightOfExamResult(examWeight);
   }
 
   SchoolSubject getName() {
@@ -38,11 +39,8 @@ class Exam {
     return exams;
   }
 
-  private void setWeightOfTest(double[] weight) {
-    if (!(weight.length == exams.length)) {
-      throw new IllegalArgumentException("Length of the array is different from amount of tests");
-    }
 
+  private void setWeightOfExamResult(double[] weight) {
     double weightSum = 0;
     for (double v : weight) {
       weightSum += v;
@@ -77,8 +75,6 @@ class Exam {
     if (0 > examIndex || exams.length - 1 < examIndex) {
       throw new ArrayIndexOutOfBoundsException("Index is out of bounds");
     }
-
-    grade = gradeRoundToValidGrade(grade);
     exams[examIndex].setGrade(grade);
   }
 
