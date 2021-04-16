@@ -1,9 +1,9 @@
 package com.app.model;
 
-public class ExamResult {
+class ExamResult {
   private Grade grade;
 
-  public int getGrade() {
+  int getGrade() {
     if (null == grade) {
       throw new NullPointerException("Grade is not set");
     }
@@ -11,7 +11,7 @@ public class ExamResult {
     return grade.getGrade();
   }
 
-  public void setGrade(int grade) {
+  void setGrade(int grade) {
     this.grade = new Grade(grade);
   }
 }
