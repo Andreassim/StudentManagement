@@ -24,18 +24,14 @@ class ExamTest {
   void getGradeCase12() {
     testExam.setGrade(0, 12);
 
-    int expected = 12;
-
-    Assertions.assertEquals(expected, testExam.getGrade());
+    Assertions.assertEquals(12, testExam.getGrade());
   }
 
   @Test
   void getGradeCase10() {
     testExam.setGrade(0, 10);
 
-    int expected = 10;
-
-    Assertions.assertEquals(expected, testExam.getGrade());
+    Assertions.assertEquals(10, testExam.getGrade());
   }
 
   @Test
@@ -44,9 +40,7 @@ class ExamTest {
     testExam.setGrade(0, 2);
     testExam.setGrade(1, 7);
 
-    int expected = 4;
-
-    Assertions.assertEquals(expected, testExam.getGrade());
+    Assertions.assertEquals(4, testExam.getGrade());
   }
 
   @Test
@@ -59,7 +53,7 @@ class ExamTest {
   }
 
   @Test
-  void setWeightOfExamResultExpection() {
+  void setWeightOfExamResultExpectation() {
     Assertions.assertThrows(
         IllegalArgumentException.class,
         () -> testExam = new Exam(SchoolSubject.ART, new double[] {0.1, 0.99}));
@@ -93,25 +87,25 @@ class ExamTest {
   }
 
   @Test
-  void getGradeWeigthedRoundingLessThan2HigherThan0(){
+  void getGradeWeightedRoundingLessThan2HigherThan0() {
     testExam = new Exam(SchoolSubject.ART, new double[] {0.1, 0.9});
-    testExam.setGrade(0, 00);
-    testExam.setGrade(1, 02);
+    testExam.setGrade(0, 0);
+    testExam.setGrade(1, 2);
 
     Assertions.assertEquals(0, testExam.getGrade());
   }
 
   @Test
-  void getGradeWeigthedRoundingLessThan10HigherThan7(){
+  void getGradeWeightedRoundingLessThan10HigherThan7() {
     testExam = new Exam(SchoolSubject.ART, new double[] {0.1, 0.9});
-    testExam.setGrade(0, 02);
+    testExam.setGrade(0, 2);
     testExam.setGrade(1, 10);
 
     Assertions.assertEquals(7, testExam.getGrade());
   }
 
   @Test
-  void getGradeWeigthedRoundingLessThan12(){
+  void getGradeWeightedRoundingLessThan12() {
     testExam = new Exam(SchoolSubject.ART, new double[] {0.1, 0.9});
     testExam.setGrade(0, 10);
     testExam.setGrade(1, 12);
@@ -120,16 +114,16 @@ class ExamTest {
   }
 
   @Test
-  void getGradeWeigthedRoundingLessThan0(){
+  void getGradeWeightedRoundingLessThan0() {
     testExam = new Exam(SchoolSubject.ART, new double[] {0.1, 0.9});
-    testExam.setGrade(0, 00);
+    testExam.setGrade(0, 0);
     testExam.setGrade(1, -3);
 
     Assertions.assertEquals(-3, testExam.getGrade());
   }
 
   @Test
-  void getGradeWeigthedRounding12(){
+  void getGradeWeightedRounding12() {
     testExam = new Exam(SchoolSubject.ART, new double[] {0.1, 0.9});
     testExam.setGrade(0, 12);
     testExam.setGrade(1, 12);
@@ -138,15 +132,11 @@ class ExamTest {
   }
 
   @Test
-  void getGradeWeigthedRoundingLessThan4HigherThan2(){
+  void getGradeWeightedRoundingLessThan4HigherThan2() {
     testExam = new Exam(SchoolSubject.ART, new double[] {0.1, 0.9});
-    testExam.setGrade(0, 02);
+    testExam.setGrade(0, 2);
     testExam.setGrade(1, 4);
 
     Assertions.assertEquals(2, testExam.getGrade());
   }
-
-
-
-
 }

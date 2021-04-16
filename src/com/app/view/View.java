@@ -11,7 +11,7 @@ public class View {
     System.out.println(getHeading(heading));
 
     for (SchoolSubject key : result.keySet()) {
-      System.out.printf("Subject: %s | Grade: %d%n", getSubject(key), result.get(key));
+      System.out.printf("Subject: %s | Grade: %02d%n", getSubject(key), result.get(key));
     }
   }
 
