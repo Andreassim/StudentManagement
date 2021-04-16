@@ -56,7 +56,7 @@ class Exam {
   }
 
   private boolean isValidGrade(int grade) {
-    int[] grades = new int[] {-3, 0, 4, 7, 10, 12};
+    int[] grades = new int[] {-3, 0, 2, 4, 7, 10, 12};
     for (int i : grades) {
       if (i == grade) {
         return true;
@@ -74,8 +74,6 @@ class Exam {
     if (0 > examIndex || exams.length - 1 < examIndex) {
       throw new ArrayIndexOutOfBoundsException("Index is out of bounds");
     }
-
-    grade = gradeRoundToValidGrade(grade);
     exams[examIndex].setGrade(grade);
   }
 

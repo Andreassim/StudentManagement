@@ -10,12 +10,12 @@ class ExamTest {
 
   @BeforeEach
   void setup() {
-    testExam = new Exam("Math");
+    testExam = new Exam(SchoolSubject.ART);
   }
 
   @Test
   void getNameTest() {
-    String expected = "Math";
+    SchoolSubject expected = SchoolSubject.ART;
 
     Assertions.assertEquals(expected, testExam.getName());
   }
@@ -40,7 +40,7 @@ class ExamTest {
 
   @Test
   void getGradeWeighted() {
-    testExam = new Exam("Math", new double[] {0.25, 0.75});
+    testExam = new Exam(SchoolSubject.ART, new double[] {0.25, 0.75});
     testExam.setGrade(0, 2);
     testExam.setGrade(1, 7);
 
@@ -51,7 +51,7 @@ class ExamTest {
 
   @Test
   void getGradeWeightedWrong() {
-    testExam = new Exam("Math", new double[] {0.1, 0.9});
+    testExam = new Exam(SchoolSubject.ART, new double[] {0.1, 0.9});
     testExam.setGrade(0, 10);
     testExam.setGrade(1, 4);
 
@@ -62,18 +62,18 @@ class ExamTest {
   void setWeightOfExamResultExpection() {
     Assertions.assertThrows(
         IllegalArgumentException.class,
-        () -> testExam = new Exam("Test", new double[] {0.1, 0.99}));
+        () -> testExam = new Exam(SchoolSubject.ART, new double[] {0.1, 0.99}));
   }
 
   @Test
   void setGradeExceptionOutOfBoundsAbove() {
-    testExam = new Exam("Test", new double[] {0.5, 0.5});
+    testExam = new Exam(SchoolSubject.ART, new double[] {0.5, 0.5});
     Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, () -> testExam.setGrade(3, 0));
   }
 
   @Test
   void setGradeExceptionOutOfBoundsBelow() {
-    testExam = new Exam("Test", new double[] {0.5, 0.5});
+    testExam = new Exam(SchoolSubject.ART, new double[] {0.5, 0.5});
     Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, () -> testExam.setGrade(-1, 0));
   }
 
@@ -88,44 +88,65 @@ class ExamTest {
   }
 
   @Test
-  void setGradeTest() {
-    testExam.setGrade(0, 1);
+  void setGradeTestNotValidGrade() {
+    Assertions.assertThrows(IllegalArgumentException.class, () -> testExam.setGrade(0, 1));
+  }
+
+  @Test
+  void getGradeWeigthedRoundingLessThan2HigherThan0(){
+    testExam = new Exam(SchoolSubject.ART, new double[] {0.1, 0.9});
+    testExam.setGrade(0, 00);
+    testExam.setGrade(1, 02);
 
     Assertions.assertEquals(0, testExam.getGrade());
   }
 
   @Test
-  void gradeRoundingLessThan0() {
-    testExam.setGrade(0, -1);
-
-    Assertions.assertEquals(-3, testExam.getGrade());
-  }
-
-  @Test
-  void gradeRoundingLessThan4() {
-    testExam.setGrade(0, 3);
-
-    Assertions.assertEquals(2, testExam.getGrade());
-  }
-
-  @Test
-  void gradeRoundingLessThan7() {
-    testExam.setGrade(0, 6);
-
-    Assertions.assertEquals(4, testExam.getGrade());
-  }
-
-  @Test
-  void gradeRoundingLessThan10() {
-    testExam.setGrade(0, 9);
+  void getGradeWeigthedRoundingLessThan10HigherThan7(){
+    testExam = new Exam(SchoolSubject.ART, new double[] {0.1, 0.9});
+    testExam.setGrade(0, 02);
+    testExam.setGrade(1, 10);
 
     Assertions.assertEquals(7, testExam.getGrade());
   }
 
   @Test
-  void gradeRoundingLessThan12() {
-    testExam.setGrade(0, 11);
+  void getGradeWeigthedRoundingLessThan12(){
+    testExam = new Exam(SchoolSubject.ART, new double[] {0.1, 0.9});
+    testExam.setGrade(0, 10);
+    testExam.setGrade(1, 12);
 
     Assertions.assertEquals(10, testExam.getGrade());
   }
+
+  @Test
+  void getGradeWeigthedRoundingLessThan0(){
+    testExam = new Exam(SchoolSubject.ART, new double[] {0.1, 0.9});
+    testExam.setGrade(0, 00);
+    testExam.setGrade(1, -3);
+
+    Assertions.assertEquals(-3, testExam.getGrade());
+  }
+
+  @Test
+  void getGradeWeigthedRounding12(){
+    testExam = new Exam(SchoolSubject.ART, new double[] {0.1, 0.9});
+    testExam.setGrade(0, 12);
+    testExam.setGrade(1, 12);
+
+    Assertions.assertEquals(12, testExam.getGrade());
+  }
+
+  @Test
+  void getGradeWeigthedRoundingLessThan4HigherThan2(){
+    testExam = new Exam(SchoolSubject.ART, new double[] {0.1, 0.9});
+    testExam.setGrade(0, 02);
+    testExam.setGrade(1, 4);
+
+    Assertions.assertEquals(2, testExam.getGrade());
+  }
+
+
+
+
 }
