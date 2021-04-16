@@ -58,7 +58,8 @@ class Exam {
   }
 
   private boolean isValidGrade(int grade) {
-    int[] grades = new int[] {-3, 0, 4, 7, 10, 12};
+    int[] grades = new int[] {-3, 0, 2, 4, 7, 10, 12};
+
     for (int i : grades) {
       if (i == grade) {
         return true;
