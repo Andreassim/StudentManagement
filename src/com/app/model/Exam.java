@@ -39,7 +39,6 @@ class Exam {
     return exams;
   }
 
-
   private void setWeightOfExamResult(double[] weight) {
     double weightSum = 0;
     for (double v : weight) {

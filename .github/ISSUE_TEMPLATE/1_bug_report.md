@@ -1,7 +1,5 @@
 ---
-name: Bug Report
-about: Bug Report
-title: ''
+name: Bug Report about: Bug Report title: ''
 labels: ''
 assignees: ''
 
@@ -9,10 +7,6 @@ assignees: ''
 
 #### Describe the bug
 
-
-
 #### Expected behavior
-
-
 
 #### Steps to Reproduce
