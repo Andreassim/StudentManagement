@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class View {
   public void displayStudent(String heading, HashMap<SchoolSubject, Integer> result) {
-    System.out.println(getHeading(heading));
+    System.out.println(formatHeading(heading));
 
     for (SchoolSubject key : result.keySet()) {
       System.out.printf("Subject: %s | Grade: %s%n", key.name(), formatGrade(result.get(key)));
@@ -20,7 +20,7 @@ public class View {
     return String.format("%d", grade);
   }
 
-  private String getHeading(String heading) {
+  private String formatHeading(String heading) {
     return (String.format("==== %s ====", heading));
   }
 
