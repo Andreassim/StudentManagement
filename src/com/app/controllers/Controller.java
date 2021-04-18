@@ -22,6 +22,7 @@ public class Controller {
     student2.addExam(SchoolSubject.HISTORY, new double[] {0.25, 0.75}, new int[] {10, 10});
     student2.addExam(SchoolSubject.PHYSICS, new double[] {0.25, 0.75}, new int[] {10, 12});
     student2.addExam(SchoolSubject.SCIENCE, 12);
+    student2.addExam(SchoolSubject.CITIZENSHIP, 2);
 
     view.displayStudent(student2.getName(), student2.result());
     view.displayAverage(student2.calculateAverage());

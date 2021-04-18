@@ -25,7 +25,7 @@ public class View {
   }
 
   public void displayAverage(double result) {
-    System.out.printf("Average: %.2f%n", result);
+    System.out.printf("Average grade: %.2f%n", result);
   }
 
   public void newLine() {
