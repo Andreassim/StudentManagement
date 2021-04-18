@@ -57,7 +57,7 @@ public class Student {
     return result;
   }
 
-  public double calculateAverage() {
+  public double getAverage() {
     double result = 0;
     for (int i = 0; i < exams.size(); i++) {
       result += getGrade(i);

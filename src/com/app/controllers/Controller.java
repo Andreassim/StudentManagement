@@ -14,7 +14,7 @@ public class Controller {
     student.addExam(SchoolSubject.GEOGRAPHY, 7);
 
     view.displayStudent(student.getName(), student.result());
-    view.displayAverage(student.calculateAverage());
+    view.displayAverage(student.getAverage());
     view.newLine();
 
     Student student2 = new Student("Andreas");
@@ -23,6 +23,6 @@ public class Controller {
     student2.addExam(SchoolSubject.SCIENCE, 12);
 
     view.displayStudent(student2.getName(), student2.result());
-    view.displayAverage(student2.calculateAverage());
+    view.displayAverage(student2.getAverage());
   }
 }
