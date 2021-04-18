@@ -12,6 +12,7 @@ public class Controller {
     student.addExam(SchoolSubject.MATH, new double[] {0.25, 0.75}, new int[] {7, 7});
     student.addExam(SchoolSubject.PHYSICS, new double[] {0.25, 0.75}, new int[] {10, 12});
     student.addExam(SchoolSubject.GEOGRAPHY, 7);
+    student.addExam(SchoolSubject.ART,0);
 
     view.displayStudent(student.getName(), student.result());
     view.displayAverage(student.calculateAverage());
