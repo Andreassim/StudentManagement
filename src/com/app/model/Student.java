@@ -11,12 +11,12 @@ public class Student {
     setName(name);
   }
 
-  public void addExam(SchoolSubject subject, double[] array, int[] array2) {
-    Exam exam = new Exam(subject, array);
+  public void addExam(SchoolSubject subject, double[] weightDistribution, int[] gradeDistribution) {
+    Exam exam = new Exam(subject, weightDistribution);
     exams.add(exam);
 
-    for (int i = 0; i < array.length; i++) {
-      exam.setGrade(i, array2[i]);
+    for (int i = 0; i < weightDistribution.length; i++) {
+      exam.setGrade(i, gradeDistribution[i]);
     }
   }
 

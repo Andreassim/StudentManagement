@@ -14,8 +14,24 @@ public class StudentTest {
   }
 
   @Test
-  void testAddStudent() {
+  void testAddStudent1() {
     Assertions.assertEquals("Test", testStudent.getName());
+  }
+
+  @Test
+  void testAddStudent2() {
+    Assertions.assertThrows(IllegalArgumentException.class, () -> testStudent = new Student(""));
+  }
+
+  @Test
+  void testAddStudent3() {
+    Assertions.assertThrows(IllegalArgumentException.class, () -> testStudent = new Student("123"));
+  }
+
+  @Test
+  void testAddStudent4() {
+    Assertions.assertThrows(
+        IllegalArgumentException.class, () -> testStudent = new Student("Test!"));
   }
 
   @Test
