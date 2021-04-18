@@ -5,7 +5,7 @@
 
 ## Student Management
 
-This project implements the `MVC` architecture. The structure of project is as follows:
+This project implements the `MVC` architecture. The structure of the project is as follows:
 
 * `src` contains all source code of the project.
 * `test` contains all test code of the project.
