@@ -35,6 +35,41 @@ class ExamTest {
   }
 
   @Test
+  void getGradeCase7() {
+    testExam.setGrade(0, 7);
+
+    Assertions.assertEquals(7, testExam.getGrade());
+  }
+
+  @Test
+  void getGradeCase4() {
+    testExam.setGrade(0, 4);
+
+    Assertions.assertEquals(4, testExam.getGrade());
+  }
+
+  @Test
+  void getGradeCase2() {
+    testExam.setGrade(0, 2);
+
+    Assertions.assertEquals(2, testExam.getGrade());
+  }
+
+  @Test
+  void getGradeCase0() {
+    testExam.setGrade(0, 0);
+
+    Assertions.assertEquals(0, testExam.getGrade());
+  }
+
+  @Test
+  void getGradeCaseMinus3() {
+    testExam.setGrade(0, -3);
+
+    Assertions.assertEquals(-3, testExam.getGrade());
+  }
+
+  @Test
   void getGradeWeighted() {
     testExam = new Exam(SchoolSubject.ART, new double[] {0.25, 0.75});
     testExam.setGrade(0, 2);
@@ -57,6 +92,20 @@ class ExamTest {
     Assertions.assertThrows(
         IllegalArgumentException.class,
         () -> testExam = new Exam(SchoolSubject.ART, new double[] {0.1, 0.99}));
+  }
+
+  @Test
+  void setWeightOfExamResultExpectation2() {
+    Assertions.assertThrows(
+        IllegalArgumentException.class,
+        () -> testExam = new Exam(SchoolSubject.ART, new double[] {0.0, 0.0}));
+  }
+
+  @Test
+  void setWeightOfExamResultExpectation3() {
+    Assertions.assertThrows(
+        IllegalArgumentException.class,
+        () -> testExam = new Exam(SchoolSubject.ART, new double[] {-0.5, -0.5}));
   }
 
   @Test

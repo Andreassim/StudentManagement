@@ -17,7 +17,7 @@ public class Controller {
     student.addExam(SchoolSubject.MUSIC, -3);
 
     view.displayStudent(student.getName(), student.result());
-    view.displayAverage(student.calculateAverage());
+    view.displayAverage(student.getAverage());
     view.newLine();
 
     Student student2 = new Student("Andreas");
@@ -29,6 +29,6 @@ public class Controller {
     student2.addExam(SchoolSubject.MATH, new double[] {0.5, 0.5}, new int[] {7, 12});
 
     view.displayStudent(student2.getName(), student2.result());
-    view.displayAverage(student2.calculateAverage());
+    view.displayAverage(student2.getAverage());
   }
 }
