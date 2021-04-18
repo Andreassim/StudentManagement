@@ -31,30 +31,4 @@ public class View {
   public void newLine() {
     System.out.println();
   }
-
-  private String getSubject(SchoolSubject subject) {
-    switch (subject) {
-      case ART:
-        return "Art";
-      case CITIZENSHIP:
-        return "Citizenship";
-      case GEOGRAPHY:
-        return "Geography";
-      case HISTORY:
-        return "History";
-      case MUSIC:
-        return "Music";
-      case PHYSICS:
-        return "Physics";
-      case SCIENCE:
-        return "Science";
-      case MATH:
-        return "Math";
-      case RELIGION:
-        return "Religion";
-
-      default:
-        return "Unknown";
-    }
-  }
 }
