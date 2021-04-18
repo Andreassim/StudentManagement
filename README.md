@@ -7,14 +7,14 @@
 
 This project implements the `MVC` architecture. The structure of project is as follows:
 
-* `src` contains all source code of project.
-* `test` contains all test code of project.
+* `src` contains all source codes of the project.
+* `test` contains all test code of the project.
 * `com` contains all company applications.
-* `app` is the source code of application.
+* `app` is the source code of the application.
 * `view` user interface package.
 * `controllers` control package.
 * `models` model package.
-* `App.java` is the start class of application.
+* `App.java` is the start class of the application.
 
 [contributors-shield]: https://img.shields.io/github/contributors/Andreassim/StudentManagement.svg?style=for-the-badge
 
